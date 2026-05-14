@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "./components/providers/SmoothScrollProvider";
-import { useEffect } from "react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,18 +18,6 @@ export const metadata = {
   description:
     "Luxury interactive sales deck for American Dream Mall.",
 };
-
-useEffect(() => {
-  const handleContextMenu = (e: MouseEvent) => {
-    e.preventDefault();
-  };
-
-  document.addEventListener("contextmenu", handleContextMenu);
-
-  return () => {
-    document.removeEventListener("contextmenu", handleContextMenu);
-  };
-}, []);
 
 export default function RootLayout({
   children,

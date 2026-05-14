@@ -24,7 +24,7 @@ export default function EventsSection() {
           alt="Events experience"
           fill
           quality={90}
-          className="object-cover object-center"
+          className="pointer-events-none select-none object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050816]/85 via-[#050816]/70 to-[#050816]/90" />
       </div>

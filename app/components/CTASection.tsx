@@ -7,6 +7,7 @@ import {
   Calendar,
   Sparkles,
 } from "lucide-react";
+import Image from "next/image";
 
 const actions = [
   {
@@ -34,8 +35,19 @@ const actions = [
 
 export default function CTASection() {
   return (
-    <section id="contact" className="section-padding relative">
-      <div className="mx-auto max-w-7xl">
+    <section id="contact" className="relative section-padding overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/cta-bg.jpg"
+          alt="Future destination"
+          fill
+          quality={90}
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#050816]/90 via-[#050816]/75 to-black/90" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-7xl">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}

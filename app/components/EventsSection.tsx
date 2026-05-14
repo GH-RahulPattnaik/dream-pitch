@@ -12,11 +12,23 @@ import {
   PAST_EVENTS,
   SPONSORSHIP_TIERS,
 } from "../lib/constants";
+import Image from "next/image";
 
 export default function EventsSection() {
   return (
-    <section id="events" className="section-padding relative">
-      <div className="mx-auto max-w-7xl">
+    <section id="events" className="relative section-padding overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/events-bg.jpg"
+          alt="Events experience"
+          fill
+          quality={90}
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050816]/85 via-[#050816]/70 to-[#050816]/90" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-7xl">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}

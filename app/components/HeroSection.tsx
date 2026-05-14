@@ -2,18 +2,31 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
     <section id="home" className="relative flex min-h-screen items-center overflow-hidden section-padding pt-24 md:pt-28">
-      {/* Background Glow */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl" />
 
+      {/* ── Background Image (no -z-10, just absolute) ── */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-bg.jpg"
+          alt="American Dream Mall"
+          fill
+          priority
+          quality={90}
+          className="object-cover object-center"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050816]/60 via-[#050816]/40 to-[#050816]/85" />
+        {/* Glows on top */}
+        <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-400/20 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-amber-300/10 blur-3xl" />
       </div>
 
-      <div className="max-w-7xl">
+      {/* ── Content — relative + z-10 so it sits ABOVE the image ── */}
+      <div className="relative z-10 max-w-7xl">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,7 +71,6 @@ export default function HeroSection() {
             className="group flex cursor-pointer items-center gap-2 rounded-full bg-cyan-400 px-7 py-4 font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-cyan-300"
           >
             Explore Opportunities
-
             <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
           </button>
 
@@ -89,13 +101,8 @@ export default function HeroSection() {
               key={label}
               className="glass-card rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/30"
             >
-              <h3 className="mb-2 text-3xl font-black md:text-4xl">
-                {value}
-              </h3>
-
-              <p className="text-sm uppercase tracking-wider text-white/60">
-                {label}
-              </p>
+              <h3 className="mb-2 text-3xl font-black md:text-4xl">{value}</h3>
+              <p className="text-sm uppercase tracking-wider text-white/60">{label}</p>
             </div>
           ))}
         </motion.div>

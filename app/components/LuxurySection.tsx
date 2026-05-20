@@ -16,7 +16,7 @@ export default function LuxurySection() {
           alt="Luxury fashion avenue"
           fill
           quality={90}
-          className="pointer-events-none select-none object-cover object-center"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050816]/95 via-[#050816]/80 to-[#050816]/60" />
       </div>

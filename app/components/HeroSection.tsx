@@ -16,7 +16,7 @@ export default function HeroSection() {
           fill
           priority
           quality={90}
-          className="pointer-events-none select-none object-cover object-center"
+          className="object-cover object-center"
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#050816]/60 via-[#050816]/40 to-[#050816]/85" />

@@ -144,18 +144,3 @@ body {
 .gpu {
   transform: translate3d(0, 0, 0);
 }
-
-/* Disable text selection */
-body {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Allow links/buttons to still be clickable/selectable */
-a,
-button {
-  -webkit-user-select: auto;
-  -ms-user-select: auto;
-  user-select: auto;
-}

@@ -43,7 +43,7 @@ export default function CTASection() {
           alt="Future destination"
           fill
           quality={90}
-          className="pointer-events-none select-none object-cover object-center"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#050816]/90 via-[#050816]/75 to-black/90" />
       </div>
